@@ -8,7 +8,7 @@
 
   <Identity
     Name="e71a5066-b7ea-4af6-a11f-9ed624d22474"
-    Publisher="CN=cervi"
+    Publisher="CN=Cervisebas"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="e71a5066-b7ea-4af6-a11f-9ed624d22474" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
@@ -33,12 +33,12 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="TecnicaDigitalWindows.App">
       <uap:VisualElements
-        DisplayName="TecnicaDigitalWindows"
+        DisplayName="TecnicaDigital Windows"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="TecnicaDigitalWindows"
+        Description="TecnicaDigital Miramar - Windows (Portado)"
         BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
     </Application>
