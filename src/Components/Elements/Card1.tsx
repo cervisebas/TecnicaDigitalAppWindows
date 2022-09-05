@@ -10,6 +10,8 @@ type IProps = {
     date: string;
     hour: string;
     status: boolean;
+    onConfirm?: ()=>any;
+    onView?: ()=>any;
 };
 type IState = {};
 
@@ -27,7 +29,12 @@ export default class Card1 extends PureComponent<IProps, IState> {
                 <View style={styles.notesContent}>
                     <Text style={styles.notes}>{`${this.props.date} (${this.props.hour}hs)`}</Text>
                 </View>
-                <SimpleButton title={(this.props.status)? "VER": "CONFIRMAR"} color={(this.props.status)? '#3DC2FF': undefined} style={styles.button} />
+                <SimpleButton
+                    title={(this.props.status)? "VER": "CONFIRMAR"}
+                    color={(this.props.status)? '#3DC2FF': undefined}
+                    style={styles.button}
+                    onPress={(this.props.status)? this.props.onView: this.props.onConfirm}
+                />
                 <Chip text={(this.props.status)? "Confirmado": "Sin confirmar"} color={(this.props.status)? '#3232FF': undefined} style={styles.chip} />
             </View>
         </View>);

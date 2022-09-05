@@ -10,7 +10,7 @@ import { DataGroup, Groups as GroupsTypes } from "../Scripts/ApiTecnica/types";
 
 type IProps = {
     style?: StyleProp<ViewStyle>;
-    controlLoading: (show: boolean, message: string)=>any;
+    controlLoading: (show: boolean, message?: string)=>any;
 };
 type IState = {
     numColumns: number;
@@ -119,6 +119,7 @@ export default class Page1 extends PureComponent<IProps, IState> {
             date={decode(item.date)}
             hour={decode(item.hour)}
             status={item.status !== '0'}
+            onConfirm={()=>this._confirmNow(item.id)}
         />);
     }
     _keyExtractor({ id }: DataGroup) {
@@ -132,6 +133,13 @@ export default class Page1 extends PureComponent<IProps, IState> {
         };
     }
     /* #################### */
+
+    /* ##### Actions ##### */
+    _confirmNow(id: string) {
+        this.props.controlLoading(true, 'Obteniendo información...');
+        setTimeout(()=>this.props.controlLoading(false), 5000);
+    }
+    /* ################### */
 
     render(): React.ReactNode {
         return(<View style={[styles.content, this.props.style]}>

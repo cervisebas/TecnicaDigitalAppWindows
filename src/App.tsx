@@ -26,7 +26,7 @@ export default class App extends PureComponent<IProps, IState> {
     this._controlLoading = this._controlLoading.bind(this);
   }
   private routes: { name: string; component: React.ReactNode; }[] = [
-    { name: 'Regists', component: <Page1 controlLoading={this._controlLoading} /> },
+    { name: 'Regists', component: <Page1 controlLoading={this._controlLoading.bind(this)} /> },
     { name: 'Groups', component: <Page2 /> },
     { name: 'Times', component: <Page3 /> },
     { name: 'StudentsList', component: <Page4 /> },
@@ -36,12 +36,11 @@ export default class App extends PureComponent<IProps, IState> {
   private refCustomLoading = createRef<CustomLoading>();
   navTo(page: string) {
     const indexNav = this.routes.findIndex((v)=>page.indexOf(v.name) !== -1);
-    console.log(indexNav);
     this.setState({ indexNav });
   }
-  _controlLoading(show: boolean, message: string) {
+  _controlLoading(show: boolean, message?: string) {
     if (!show) return this.refCustomLoading.current?.close();
-    this.refCustomLoading.current?.open(message);
+    this.refCustomLoading.current?.open(message!);
   }
   render(): React.ReactNode {
     return(<View style={styles.content}>
