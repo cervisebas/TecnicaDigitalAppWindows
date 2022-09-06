@@ -9,7 +9,7 @@
   <Identity
     Name="e71a5066-b7ea-4af6-a11f-9ed624d22474"
     Publisher="CN=Cervisebas"
-    Version="1.0.0.0" />
+    Version="1.0.1.0" />
 
   <mp:PhoneIdentity PhoneProductId="e71a5066-b7ea-4af6-a11f-9ed624d22474" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 

@@ -26,9 +26,6 @@ using RNDeviceInfoCPP;
 // Namespaces from react-native-linear-gradient
 using BVLinearGradient;
 
-// Namespaces from react-native-screens
-using RNScreens;
-
 namespace Microsoft.ReactNative.Managed
 {
     internal static class AutolinkedNativeModules
@@ -51,8 +48,6 @@ namespace Microsoft.ReactNative.Managed
             packageProviders.Add(new RNDeviceInfoCPP.ReactPackageProvider());
             // IReactPackageProviders from react-native-linear-gradient
             packageProviders.Add(new BVLinearGradient.ReactPackageProvider());
-            // IReactPackageProviders from react-native-screens
-            packageProviders.Add(new RNScreens.ReactPackageProvider());
         }
     }
 }
